@@ -2,30 +2,29 @@
 #include <stdlib.h>
 #include <time.h>
 
+
 int main(int argc, char *argv[]) {
 	system("chcp 1251");
-	system("COLOR 2");
 	srand(time(NULL));
-	int i,j,b,n,k = 0;
+	int i, j, n ,temp ,k = 0;
 	printf("¬ведите количество элементов в массиве\n");
 	scanf("%d",&n);
-	int	x[n];
+	int x[n];
 	printf("—формирован массив элементов:\n");
 	for (i = 0; i < n; i++){
-		x[i] = rand()%100+1;
-		printf("%d ",x[i]);
+		x[i] = rand()%100;
+		printf("%3d",x[i]);
 	}
 	printf("\n");
-	for (i = 0; i < n; i++){
-		b = x[i];
-		j = i - 1;
-		while (b < x[j]&&j>=0){
-			x[j + 1] = x[j];
-			j--;
-			k+=3;
+	for (i = 0; i < n-1; i++){
+		for(j=i+1; j<n; j++){
+			if(x[i]>x[j]){
+				temp = x[i];
+				x[i] = x[j];
+				x[j] = temp;
+				k++;
+			}
 		}
-		x[j + 1] = b;
-		k++;
 	}
 	printf("ќтсортированный массив:\n");
 	for (i = 0; i < n; i++){
