@@ -6,7 +6,7 @@ int main(int argc, char *argv[]) {
 	system("chcp 1251");
 	system("COLOR 2");
 	srand(time(NULL));
-	int i,j,b,n,k = 0;
+	int i,j,b,n,k = 0, k2 = 0;
 	printf("Введите количество элементов в массиве\n");
 	scanf("%d",&n);
 	int	x[n];
@@ -22,16 +22,16 @@ int main(int argc, char *argv[]) {
 		while (b < x[j]&&j>=0){
 			x[j + 1] = x[j];
 			j--;
-			k+=3;
+			k++;
 		}
 		x[j + 1] = b;
-		k++;
+		k2++;
 	}
 	printf("Отсортированный массив:\n");
 	for (i = 0; i < n; i++){
 		printf("%d ",x[i]);
 	}
 	printf("\n");
-	printf("Количество перестановок и сравнений: %d",k);
+	printf("Количество перестановок и сравнений: %d  %d",k, k2);
 	return 0;
 }
