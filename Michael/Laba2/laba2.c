@@ -6,7 +6,7 @@
 int main(int argc, char *argv[]) {
 	system("chcp 1251");
 	srand(time(NULL));
-	int i, j, n ,temp ,k = 0;
+	int i, j, n ,temp ,k = 0, k1 = 0;
 	printf("Введите количество элементов в массиве\n");
 	scanf("%d",&n);
 	int x[n];
@@ -24,6 +24,7 @@ int main(int argc, char *argv[]) {
 				x[j] = temp;
 				k++;
 			}
+			k1++;
 		}
 	}
 	printf("Отсортированный массив:\n");
@@ -31,6 +32,7 @@ int main(int argc, char *argv[]) {
 		printf("%d ",x[i]);
 	}
 	printf("\n");
-	printf("Количество перестановок и сравнений: %d",k);
+	printf("Количество перестановок: %d\n",k);
+	printf("Количество сравнений: %d\n",k1);
 	return 0;
 }
