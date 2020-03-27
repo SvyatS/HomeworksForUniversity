@@ -32,7 +32,7 @@ int main(int argc, char *argv[]) {
 	int ans1, ans2;
 	for(i=0; i<10000; i+=100){
 		Sort(i, &ans1, &ans2);
-		fprintf(fp, "%d;%d\n", ans2, ans1);
+		fprintf(fp, "%d;%d\n", i, (ans1+ans2)/2);
 	}
 	fclose(fp);
 	printf("end");
