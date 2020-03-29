@@ -13,6 +13,7 @@ void Sort(int n, int *ans1, int *ans2){
    	 			for(i = step; i < n; i++){
             		tmp = mass[i];
             		for (j = i; j >= step; j -= step){
+            			num1++;
                 		if (tmp < mass[j - step]){
                 			mass[j] = mass[j - step];
                     		num2++;
@@ -20,7 +21,6 @@ void Sort(int n, int *ans1, int *ans2){
                 		else break;
                     
             		}
-            		num1++;
             		mass[j] = tmp;
          		}
          		step = (step-1)/2;
@@ -30,13 +30,13 @@ void Sort(int n, int *ans1, int *ans2){
    	 			for(i = step; i < n; i++){
             		tmp = mass[i];
             		for (j = i; j >= step; j -= step){
+            			num1++;
                 		if (tmp < mass[j - step]){
                 			mass[j] = mass[j - step];
                     		num2++;
                 		}
                 		else break;   
             		}
-            		num1++;
             		mass[j] = tmp;
          		}
          		step = (step-1)/3;
@@ -52,7 +52,7 @@ void Sort(int n, int *ans1, int *ans2){
 int main(int argc, char *argv[]) {
 	int i;
 	FILE *fp;
-	fp = fopen("answer.csv", "w");
+	fp = fopen("../forAllLabs/answer.csv", "a+");
 	int ans1, ans2;
 	for(i=0; i<10000; i+=100){
 		Sort(i, &ans1, &ans2);

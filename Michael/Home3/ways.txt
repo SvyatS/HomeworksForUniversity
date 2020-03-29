@@ -1,0 +1,7 @@
+Novosibirsk 1 23.00 10000
+Tomsk 2 22.00 7000
+Chita 3 6.00 11000
+Moskva 4 7.00 15000
+Moskva 5 9.00 15000
+Novosibirsk 6 10.00 100000
+Kemerovo 7 13.00 9000

@@ -28,7 +28,7 @@ void Sort(int n, int *ans1, int *ans2){
 int main(int argc, char *argv[]) {
 	int i;
 	FILE *fp;
-	fp = fopen("answer.csv", "w");
+	fp = fopen("../forAllLabs/answer.csv", "w");
 	int ans1, ans2;
 	for(i=0; i<10000; i+=100){
 		Sort(i, &ans1, &ans2);
