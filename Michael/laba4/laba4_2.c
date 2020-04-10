@@ -50,15 +50,18 @@ void Sort(int n, int *ans1, int *ans2){
 	*ans2 = num2;
 }
 int main(int argc, char *argv[]) {
-	int i;
-	FILE *fp;
-	fp = fopen("../forAllLabs/answer.csv", "a+");
+	int i, buf[3];
+	FILE *fp, *fp1;
+	fp = fopen("../forAllLabs/answerWithLaba3.csv", "r");
+	fp1 = fopen("../forAllLabs/answerWithLaba4.csv", "w");
 	int ans1, ans2;
 	for(i=0; i<10000; i+=100){
+		fscanf(fp, "%d;%d;%d;", &buf[0], &buf[1], &buf[2]);
 		Sort(i, &ans1, &ans2);
-		fprintf(fp, "%d;%d\n", i, (ans2+ans1)/2);
+		fprintf(fp1, "%d;%d;%d;%d;\n", buf[0], buf[1], buf[2], (ans2+ans1));
 	}
 	fclose(fp);
+	fclose(fp1);
 	printf("end");
 	return 0;
 }
