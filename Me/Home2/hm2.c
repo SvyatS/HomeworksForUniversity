@@ -18,7 +18,6 @@ void *Add(Node *Top, int data) {
 int Delete(Node **Top){
 	int d;
 	if((*Top) != NULL){
-		d = (*Top)->data;
 		Node *temp = *Top;
 		*Top = (*Top)->next;
 		free(temp);	
@@ -52,6 +51,7 @@ int main() {
 	int i, buf;
 	FILE *fp;
 	Node *head = NULL;
+	Node *head2 = NULL;
 	Node *end = NULL;
 	fp = fopen("numbers.txt", "r");
 	while(!feof(fp)){
@@ -62,13 +62,13 @@ int main() {
 	printf("List from file:\n");
 	print(head);
 	printf("Sorted list (All elements =< 0):\n");
-	while(head){	
-		if(head->data > 0){
-			Delete(&head);
-		}else{
-			printf("%5d", head->data);
-			head = head->next;
-		}	
+	int k = 0;
+	while(head){
+		if(head->data < 0)
+			head2 = AddToEnd(head2, head->data);
+		head = head->next;
+	//	printf("%d\n", head->data);
 	}
+	print(head2);
 	return 0;
 }

@@ -1,0 +1,32 @@
+# Project: weqwe
+# Makefile created by Dev-C++ 5.4.2
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = sdf.o mylibraly.o
+LINKOBJ  = sdf.o mylibraly.o
+LIBS     = -L"C:/mingw-w64/mingw32/lib" -static-libgcc -g3
+INCS     = -I"C:/mingw-w64/mingw32/include"
+CXXINCS  = -I"C:/mingw-w64/mingw32/include"
+BIN      = weqwe.exe
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
+RM       = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+sdf.o: sdf.c
+	$(CC) -c sdf.c -o sdf.o $(CFLAGS)
+
+mylibraly.o: mylibraly.c
+	$(CC) -c mylibraly.c -o mylibraly.o $(CFLAGS)
